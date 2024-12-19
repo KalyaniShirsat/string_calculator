@@ -16,7 +16,13 @@ RSpec.describe Calculator do
 
     context 'when the delimiter is a newline character' do
       it 'returns sum of the numbers in the string' do
-        expect(Calculator.add('5\n1,0,2,2')).to eq 10
+        expect(Calculator.add("5\n1,0,2,2")).to eq 10
+      end
+    end
+
+    context 'when the delimiter is a custom character' do
+      it 'returns sum of the numbers in the string' do
+        expect(Calculator.add("//;\n1;20")).to eq 21
       end
     end
   end
