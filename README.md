@@ -41,7 +41,7 @@ Calculator.add('3,5,1')
 You can provide newline characters instead comma to separate the numbers in the input string.
 
 ```shell
-Calculator.add('2\n8,0')
+Calculator.add("2\n8,0")
 
 # Output: 10
 
@@ -50,7 +50,7 @@ Calculator.add('2\n8,0')
 To change the delimiter, the beginning of the string will contain a separate line that looks like this: "//[delimiter]\n[numbers…]"
 
 ```shell
-Calculator.add('//;\n1;20')
+Calculator.add("//;\n1;20")
 
 # Output: 21
 
