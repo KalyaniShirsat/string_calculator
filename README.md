@@ -58,7 +58,9 @@ Calculator.add("//;\n1;20")
 
 Calling `Calculator.add` with a negative number will throw an exception.
 
-### Test
+## Test
+
+Execute the test suit using below command from the root of the project.
 
 ```shell
 rspec
