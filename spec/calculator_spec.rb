@@ -22,7 +22,7 @@ RSpec.describe Calculator do
 
     context 'when the delimiter is a custom character' do
       it 'returns sum of the numbers in the string' do
-        expect(Calculator.add("//;\n1;20")).to eq 21
+        expect(Calculator.add("//;\n1;20\n2")).to eq 23
       end
     end
   end
@@ -38,6 +38,15 @@ RSpec.describe Calculator do
       expect {
         Calculator.add('-5,1,-2,3')
       }.to raise_error(ArgumentError, 'negative numbers not allowed -5, -2')
+      expect {
+        Calculator.add("//;\n3;-1;4")
+      }.to raise_error(ArgumentError, 'negative numbers not allowed -1')
+    end
+  end
+
+  context 'when the custom delimiter is invalid' do
+    it 'raises exception' do
+      expect { Calculator.add("//;\n5,2") }.to raise_error(ArgumentError, 'invalid delimiter')
     end
   end
 end
